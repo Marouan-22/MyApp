@@ -2,13 +2,16 @@
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:prism="http://prismlibrary.com"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom"
             prism:ViewModelLocator.AutowireViewModel="True"
-            x:Class="MyApp.Views.MainTabbedPage">
-    
+            x:Class="MyApp.Views.MainTabbedPage"
+            Title="{Binding Title}">
+
     <ContentPage Title="Home" IconImageSource="home_icon_2x.png">
         <ContentPage.Content>
             <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
-                <Label Text="Welcome to Tabbed Page"/>
+                <Label Text="Welcome to my Home Page"/>
             </StackLayout>
         </ContentPage.Content>
     </ContentPage>
@@ -16,7 +19,7 @@
     <ContentPage Title="Workout" IconImageSource="workout_icon_2x.png">
         <ContentPage.Content>
             <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
-                <Label Text="Welcome to Tabbed Page"/>
+                <Label Text="Welcome to my Workout Page"/>
             </StackLayout>
         </ContentPage.Content>
     </ContentPage>
@@ -24,7 +27,7 @@
     <ContentPage Title="Calender" IconImageSource="calender_icon_2x.png">
         <ContentPage.Content>
             <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
-                <Label Text="Welcome to Tabbed Page"/>
+                <Label Text="Welcome to my Calender Page"/>
             </StackLayout>
         </ContentPage.Content>
     </ContentPage>
@@ -32,7 +35,7 @@
     <ContentPage Title="Timer" IconImageSource="timer_icon_2x.png">
         <ContentPage.Content>
             <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
-                <Label Text="Welcome to Tabbed Page"/>
+                <Label Text="Welcome to my Timer Page"/>
             </StackLayout>
         </ContentPage.Content>
     </ContentPage>

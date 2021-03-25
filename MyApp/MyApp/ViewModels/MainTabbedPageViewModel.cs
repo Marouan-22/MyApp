@@ -13,6 +13,7 @@ namespace MyApp.ViewModels
             :base(navigationService)
         {
             Title = "MaSa";
+            
         }
     }
 }
