@@ -28,6 +28,7 @@ namespace MyApp
 
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
+            containerRegistry.RegisterForNavigation<MainTabbedPage, MainTabbedPageViewModel>();
         }
     }
 }
