@@ -7,8 +7,6 @@ namespace MyApp.Views
         public MainTabbedPage()
         {
             InitializeComponent();
-
-            
         }
     }
 }
