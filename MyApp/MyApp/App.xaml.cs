@@ -19,7 +19,8 @@ namespace MyApp
         {
             InitializeComponent();
 
-            await NavigationService.NavigateAsync("NavigationPage/MainPage");
+            //await NavigationService.NavigateAsync("NavigationPage/MainPage");
+            await NavigationService.NavigateAsync("NavigationPage/MainTabbedPage");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)

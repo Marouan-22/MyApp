@@ -2,13 +2,16 @@
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:prism="http://prismlibrary.com"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom"
             prism:ViewModelLocator.AutowireViewModel="True"
-            x:Class="MyApp.Views.MainTabbedPage">
-    
-    <ContentPage Title="Home" IconImageSource="home_icon_2x.png">
+            x:Class="MyApp.Views.MainTabbedPage"
+            Title="{Binding Title}">
+
+    <ContentPage Title="ToDo" IconImageSource="todo_icon_2x.png">
         <ContentPage.Content>
             <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
-                <Label Text="Welcome to Tabbed Page"/>
+                <Label Text="Welcome to my todo Page"/>
             </StackLayout>
         </ContentPage.Content>
     </ContentPage>
@@ -16,7 +19,28 @@
     <ContentPage Title="Workout" IconImageSource="workout_icon_2x.png">
         <ContentPage.Content>
             <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
-                <Label Text="Welcome to Tabbed Page"/>
+                <Label Text="Welcome to my Workout Page"/>
+            </StackLayout>
+        </ContentPage.Content>
+    </ContentPage>
+
+    <ContentPage Title="Home" IconImageSource="home_icon_2x.png">
+        <ContentPage.Content>
+            <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                <!--<Label Text="Welcome to my Home Page"/>-->
+                <Image Source="logo_MaSa.png" Margin="25"/>
+
+                <Label Text="Welkom bij MaSa!" HorizontalOptions="CenterAndExpand" FontSize="12" Margin="25" />
+
+                <Button Text="Info over MaSa"
+                        VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="Center"
+                        FontSize="16"
+                        WidthRequest="318"
+                        HeightRequest="50"
+                        Margin="25"/>
+
+                <Label Text="Veel Plezier!" HorizontalOptions="CenterAndExpand" FontSize="12" Margin="25"/>
             </StackLayout>
         </ContentPage.Content>
     </ContentPage>
@@ -24,7 +48,7 @@
     <ContentPage Title="Calender" IconImageSource="calender_icon_2x.png">
         <ContentPage.Content>
             <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
-                <Label Text="Welcome to Tabbed Page"/>
+                <Label Text="Welcome to my Calender Page"/>
             </StackLayout>
         </ContentPage.Content>
     </ContentPage>
@@ -32,7 +56,7 @@
     <ContentPage Title="Timer" IconImageSource="timer_icon_2x.png">
         <ContentPage.Content>
             <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
-                <Label Text="Welcome to Tabbed Page"/>
+                <Label Text="Welcome to my Timer Page"/>
             </StackLayout>
         </ContentPage.Content>
     </ContentPage>
