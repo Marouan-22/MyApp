@@ -35,6 +35,7 @@ namespace MyApp
             containerRegistry.RegisterForNavigation<TodoPage, TodoPageViewModel>();
             containerRegistry.RegisterForNavigation<CalenderPage, CalenderPageViewModel>();
             containerRegistry.RegisterForNavigation<TimerPage, TimerPageViewModel>();
+            containerRegistry.RegisterForNavigation<InfoPage, InfoPageViewModel>();
         }
     }
 }

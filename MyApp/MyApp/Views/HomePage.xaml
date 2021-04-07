@@ -21,7 +21,8 @@
                         FontSize="16"
                         WidthRequest="318"
                         HeightRequest="50"
-                        Margin="25"/>
+                        Margin="25"
+                        Clicked="Button_Clicked"/>
 
             <Label Text="Veel Plezier!" HorizontalOptions="CenterAndExpand" FontSize="12" Margin="25"/>
         </StackLayout>
