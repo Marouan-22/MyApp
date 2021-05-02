@@ -1,5 +1,6 @@
 ﻿using Prism.Commands;
 using Prism.Mvvm;
+using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -7,12 +8,14 @@ using System.Linq;
 
 namespace MyApp.ViewModels
 {
-    public class BMICalculatorViewModel : INotifyPropertyChanged
+    public class BMICalculatorViewModel : ViewModelBase, INotifyPropertyChanged
     {
-        public BMICalculatorViewModel()
+        public BMICalculatorViewModel(INavigationService navigationService)
+            : base(navigationService)
         {
-
+            Title = "BMI";
         }
+
 
         private double height = 180;
         private double weight = 72;

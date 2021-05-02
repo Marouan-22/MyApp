@@ -8,7 +8,7 @@ namespace MyApp.Views
         public BMICalculator()
         {
             InitializeComponent();
-            BindingContext = new BMICalculatorViewModel();
+            //BindingContext = new BMICalculatorViewModel();
         }
 
     }
