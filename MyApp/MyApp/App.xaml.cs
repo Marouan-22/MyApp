@@ -20,7 +20,7 @@ namespace MyApp
             InitializeComponent();
 
             //await NavigationService.NavigateAsync("NavigationPage/MainPage");
-            await NavigationService.NavigateAsync("NavigationPage/MainTabbedPage?createTab=TodoPage&createTab=WorkoutPage&createTab=HomePage&createTab=CalenderPage&createTab=TimerPage");
+            await NavigationService.NavigateAsync("NavigationPage/MainTabbedPage?createTab=TodoPage&createTab=WorkoutPage&createTab=HomePage&createTab=BMICalculator&createTab=TimerPage");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
@@ -36,6 +36,7 @@ namespace MyApp
             containerRegistry.RegisterForNavigation<CalenderPage, CalenderPageViewModel>();
             containerRegistry.RegisterForNavigation<TimerPage, TimerPageViewModel>();
             containerRegistry.RegisterForNavigation<InfoPage, InfoPageViewModel>();
+            containerRegistry.RegisterForNavigation<BMICalculator, BMICalculatorViewModel>();
         }
     }
 }
