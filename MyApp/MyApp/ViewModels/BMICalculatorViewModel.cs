@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace MyApp.ViewModels
 {
-    public class BMICalculatorViewModel : BindableBase //, INotifyPropertyChanged
+    public class BMICalculatorViewModel : INotifyPropertyChanged
     {
         public BMICalculatorViewModel()
         {
@@ -23,8 +23,7 @@ namespace MyApp.ViewModels
             set
             {
                 height = NextStep(value);
-                RaisePropertyChanged(nameof(Bmi));
-                RaisePropertyChanged(nameof(Classification));
+                Update();
             }
         }
 
@@ -34,11 +33,9 @@ namespace MyApp.ViewModels
             set
             {
                 weight = NextStep(value);
-                RaisePropertyChanged(nameof(Bmi));
-                RaisePropertyChanged(nameof(Classification));
+                Update();
             }
         }
-        private double Bmi => Math.Round(Weight / Math.Pow(Height / 100, 2), 2);
         public string Classification
         {
             get
@@ -61,9 +58,26 @@ namespace MyApp.ViewModels
                 }
             }
         }
+
+        public double Bmi
+        {
+            get
+            {
+                return Math.Round(Weight / Math.Pow(Height / 100, 2), 2);
+            }
+        }
+
+        private void Update()
+        {
+            RaisePropertyChanged(nameof(Bmi));
+            RaisePropertyChanged(nameof(Classification));
+        }
+
         private double NextStep(double value) => Math.Round(value / STEP) * STEP;
-        private void RaisePropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        private void RaisePropertyChanged(string propertyName) 
+            => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
         public event PropertyChangedEventHandler PropertyChanged;
+
     }
 }

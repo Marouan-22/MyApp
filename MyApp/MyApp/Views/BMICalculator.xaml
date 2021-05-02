@@ -19,7 +19,7 @@
                TargetType="Label"
                BasedOn="{StaticResource LabelStyle}">
             <Setter Property="FontSize"
-                    Value="Header"/>
+            Value="24"/>
         </Style>
         <Style x:Key="ValueStyle" TargetType="Label" BasedOn="{StaticResource LabelStyle}">
             <Setter Property="FontSize"
@@ -39,14 +39,14 @@
     
     <FlexLayout Direction="Column"
                 JustifyContent="SpaceEvenly"
-                Padding="40">
+                Padding="10">
         <StackLayout>
             <Label Text="How tall are you?"
-                   Style="{StaticResource TitleStyle}"/>
+            Style="{StaticResource TitleStyle}"/>
             <Label Text="{Binding Source={x:Reference HeightSlider},
                 Path=Value,
                 StringFormat='{0:F0} cm'}"
-                   Style="{StaticResource ValueStyle}"/>
+            Style="{StaticResource ValueStyle}"/>
             <Slider x:Name="HeightSlider"
                     Maximum="220"
                     Minimum="40"
@@ -54,11 +54,11 @@
         </StackLayout>
         <StackLayout>
             <Label Text="How much do you weigh?"
-                   Style="{StaticResource TitleStyle}"/>
+            Style="{StaticResource TitleStyle}"/>
             <Label Text="{Binding Source={x:Reference WeightSlider},
                 Path=Value,
                 StringFormat='{0:F0} kg'}"
-                   Style="{StaticResource ValueStyle}"/>
+            Style="{StaticResource ValueStyle}"/>
             <Slider x:Name="WeightSlider"
                     Maximum="300"
                     Minimum="40"
@@ -66,12 +66,12 @@
         </StackLayout>
         <StackLayout>
             <Label Text="Your Bmi is"
-                   Style="{StaticResource LabelStyle}"/>
+            Style="{StaticResource LabelStyle}"/>
             <Label Text="{Binding Bmi}"
                    Style="{StaticResource LabelStyle}"
-                   FontSize="48"/>
+                   FontSize="30"/>
             <Label Text="{Binding Classification}"
-                   Style="{StaticResource LabelStyle}"/>
+            Style="{StaticResource LabelStyle}"/>
         </StackLayout>
     </FlexLayout>
 
