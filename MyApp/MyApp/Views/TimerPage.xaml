@@ -7,10 +7,14 @@
              IconImageSource="timer_icon_2x.png"
              Title="{Binding Title}">
 
-    <ContentPage.Content>
-        <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
-            <Label Text="Welcome to my Timer Page"/>
-        </StackLayout>
-    </ContentPage.Content>
+    <StackLayout>
+        <Label x:Name="lblStopwatch" FontSize="45" TextColor="#00A8E8"
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="CenterAndExpand"/>
+
+        <Button x:Name="btnStart" Text="Start" Clicked="btnStart_Clicked"/>
+        <Button x:Name="btnStop" Text="Stop" Clicked="btnStop_Clicked"/>
+        <Button x:Name="btnReset" Text="Reset" Clicked="btnReset_Clicked"/>
+    </StackLayout>
 
 </ContentPage>
