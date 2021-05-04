@@ -37,6 +37,8 @@ namespace MyApp
             containerRegistry.RegisterForNavigation<TimerPage, TimerPageViewModel>();
             containerRegistry.RegisterForNavigation<InfoPage, InfoPageViewModel>();
             containerRegistry.RegisterForNavigation<BMICalculator, BMICalculatorViewModel>();
+            containerRegistry.RegisterForNavigation<NewTodoPage, NewTodoPageViewModel>();
+            containerRegistry.RegisterForNavigation<TodoDetailPage, TodoDetailPageViewModel>();
         }
     }
 }
