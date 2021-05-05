@@ -1,3 +1,5 @@
+using MyApp.Models;
+using MyApp.Repository;
 using MyApp.ViewModels;
 using MyApp.Views;
 using Prism;
@@ -39,6 +41,9 @@ namespace MyApp
             containerRegistry.RegisterForNavigation<BMICalculator, BMICalculatorViewModel>();
             containerRegistry.RegisterForNavigation<NewTodoPage, NewTodoPageViewModel>();
             containerRegistry.RegisterForNavigation<TodoDetailPage, TodoDetailPageViewModel>();
+            containerRegistry.RegisterForNavigation<EditTodoPage, EditTodoPageViewModel>();
+
+            containerRegistry.RegisterSingleton<ITodoRepository<Todo>, TodoRepository>();
         }
     }
 }

@@ -9,16 +9,19 @@ using System.Linq;
 
 namespace MyApp.ViewModels
 {
-    public class NewTodoPageViewModel : ViewModelBase
+    public class EditTodoPageViewModel : ViewModelBase
     {
         private string text;
         private string description;
 
+        private Todo todo;
+
         private ITodoRepository<Todo> todoRepository;
-        public NewTodoPageViewModel(INavigationService navigationService, ITodoRepository<Todo> todoRepository)
+
+        public EditTodoPageViewModel(INavigationService navigationService, ITodoRepository<Todo> todoRepository)
             :base(navigationService)
         {
-            Title = "New Todo";
+            Title = "Edit Todo";
 
             this.todoRepository = todoRepository;
 
@@ -41,6 +44,16 @@ namespace MyApp.ViewModels
         public DelegateCommand SaveCommand { get; }
         public DelegateCommand CancelCommand { get; }
 
+        public override void OnNavigatedTo(INavigationParameters parameters)
+        {
+            if (parameters.ContainsKey("todo"))
+            {
+                todo = parameters.GetValue<Todo>("todo");
+                Text = todo.Text;
+                Description = todo.Description;
+            }
+        }
+
         private async void OnCancel()
         {
             await NavigationService.GoBackAsync();
@@ -48,16 +61,12 @@ namespace MyApp.ViewModels
 
         private async void OnSave()
         {
-            Todo newItem = new Todo()
-            {
-                //Id = Guid.NewGuid().ToString(),
-                Text = Text,
-                Description = Description
-            };
+            todo.Text = Text;
+            todo.Description = Description;
 
-            await todoRepository.AddItemAsync(newItem);
+            await todoRepository.UpdateItemAsync(todo);
 
-            await NavigationService.GoBackAsync();
+            await NavigationService.GoBackToRootAsync();
         }
 
         private bool ValidateSave()

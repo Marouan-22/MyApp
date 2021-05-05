@@ -5,12 +5,33 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="MyApp.Views.TodoPage"
              IconImageSource="todo_icon_2x.png"
-             Title="{Binding Title}">
+             Title="{Binding Title}"
+             xmlns:local="clr-namespace:MyApp.ViewModels"
+             xmlns:model="clr-namespace:MyApp.Models">
 
-        <ContentPage.Content>
-            <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
-                <Label Text="Welcome to my todo Page"/>
-            </StackLayout>
-        </ContentPage.Content>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Command="{Binding AddItemCommand}" />
+    </ContentPage.ToolbarItems>
+
+    <RefreshView x:DataType="local:TodoPageViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
+        <CollectionView ItemsSource="{Binding Todos}"
+                SelectionMode="Single"
+                SelectedItem="{Binding SelectedItem}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Padding="10" x:DataType="model:Todo">
+                        <Label Text="{Binding Text}" 
+                            LineBreakMode="NoWrap" 
+                            Style="{DynamicResource ListItemTextStyle}" 
+                            FontSize="16" />
+                        <Label Text="{Binding Description}" 
+                            LineBreakMode="NoWrap"
+                            Style="{DynamicResource ListItemDetailTextStyle}"
+                            FontSize="13" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </RefreshView>
 
 </ContentPage>
