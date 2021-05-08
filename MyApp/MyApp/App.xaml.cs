@@ -21,8 +21,10 @@ namespace MyApp
         {
             InitializeComponent();
 
-            //await NavigationService.NavigateAsync("NavigationPage/MainPage");
-            await NavigationService.NavigateAsync("NavigationPage/MainTabbedPage?createTab=TodoPage&createTab=WorkoutPage&createTab=HomePage&createTab=BMICalculator&createTab=TimerPage");
+            //MainPage = new RegistrationPage();
+
+            await NavigationService.NavigateAsync("NavigationPage/LoginPage");
+            //await NavigationService.NavigateAsync("NavigationPage/MainTabbedPage?createTab=TodoPage&createTab=WorkoutPage&createTab=HomePage&createTab=BMICalculator&createTab=TimerPage");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
@@ -44,6 +46,7 @@ namespace MyApp
             containerRegistry.RegisterForNavigation<EditTodoPage, EditTodoPageViewModel>();
 
             containerRegistry.RegisterSingleton<ITodoRepository<Todo>, TodoRepository>();
+            containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
         }
     }
 }

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="MyApp.Views.LoginPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Grid HorizontalOptions="CenterAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Entry Placeholder="UserName" x:Name="EntryUser" Grid.Row="0"/>
+                    <Entry Placeholder="Password" IsPassword="True" FontSize="16" x:Name="EntryPassword" Grid.Row="1"/>
+                    <Button Text="Register" HorizontalOptions="CenterAndExpand" TextColor="White" BackgroundColor="LightBlue" Grid.Row="2" Clicked="Button_Clicked_1"/>
+                    <Button Text="SignUp" Grid.Row="3" Clicked="Button_Clicked"/>
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
