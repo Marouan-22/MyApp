@@ -2,7 +2,7 @@
 
 namespace MyApp.Views
 {
-    public partial class MainTabbedPage : TabbedPage
+    public partial class MainTabbedPage : ContentPage
     {
         public MainTabbedPage()
         {
@@ -10,5 +10,6 @@ namespace MyApp.Views
 
             
         }
+
     }
 }

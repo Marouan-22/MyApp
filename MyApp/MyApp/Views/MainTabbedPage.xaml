@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:prism="http://prismlibrary.com"
             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
@@ -7,5 +7,13 @@
             prism:ViewModelLocator.AutowireViewModel="True"
             x:Class="MyApp.Views.MainTabbedPage"
             Title="{Binding Title}">
-
-</TabbedPage>
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <Button Command="{Binding NavigateCommand}" CommandParameter="HomePage" Text="Home"></Button>
+            <Button Command="{Binding NavigateCommand}" CommandParameter="BMICalculator" Text="BMI calculator"></Button>
+            <Button Command="{Binding NavigateCommand}" CommandParameter="TimerPage" Text="Timer"></Button>
+            <Button Command="{Binding NavigateCommand}" CommandParameter="WorkoutPage" Text="Workout"></Button>
+            <Button Command="{Binding NavigateCommand}" CommandParameter="TodoPage"  Text="Todo"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

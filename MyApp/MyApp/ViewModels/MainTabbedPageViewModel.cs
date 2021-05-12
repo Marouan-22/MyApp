@@ -4,6 +4,7 @@ using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Xamarin.Forms;
 
 namespace MyApp.ViewModels
 {
@@ -13,7 +14,14 @@ namespace MyApp.ViewModels
             :base(navigationService)
         {
             Title = "MaSa";
-            
+
+            NavigateCommand = new DelegateCommand<string>(NavigateCommandExecuted);
+        }
+        public DelegateCommand<string> NavigateCommand { get; }
+
+        private async void NavigateCommandExecuted(string path)
+        {
+            await NavigationService.NavigateAsync($"NavigationPage/{path}");
         }
     }
 }

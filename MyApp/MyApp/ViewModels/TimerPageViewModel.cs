@@ -12,7 +12,8 @@ namespace MyApp.ViewModels
         public TimerPageViewModel(INavigationService navigationService)
             : base(navigationService)
         {
-            Title = "Workout";
+            Title = "Timer";
         }
+
     }
 }
