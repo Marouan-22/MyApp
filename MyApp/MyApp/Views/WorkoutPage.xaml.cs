@@ -1,4 +1,7 @@
-﻿using Xamarin.Forms;
+﻿using MyApp.Models;
+using MyApp.ViewModels;
+using System;
+using Xamarin.Forms;
 
 namespace MyApp.Views
 {
@@ -7,6 +10,13 @@ namespace MyApp.Views
         public WorkoutPage()
         {
             InitializeComponent();
+            //BindingContext = new WorkoutPageViewModel();
+        }
+
+        private async void OnItemSelected(Object sender, ItemTappedEventArgs e)
+        {
+            var details = e.Item as Workout;
+            await Navigation.PushAsync(new WorkoutDetailPage(details.Name, details.Image, details.ImageDetail, details.Instructions));
         }
     }
 }

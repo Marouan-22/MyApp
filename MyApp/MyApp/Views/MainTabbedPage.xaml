@@ -9,11 +9,11 @@
             Title="{Binding Title}">
     <ContentPage.Content>
         <StackLayout Orientation="Vertical">
-            <Button Command="{Binding NavigateCommand}" CommandParameter="HomePage" Text="Home"></Button>
-            <Button Command="{Binding NavigateCommand}" CommandParameter="BMICalculator" Text="BMI calculator"></Button>
-            <Button Command="{Binding NavigateCommand}" CommandParameter="TimerPage" Text="Timer"></Button>
-            <Button Command="{Binding NavigateCommand}" CommandParameter="WorkoutPage" Text="Workout"></Button>
-            <Button Command="{Binding NavigateCommand}" CommandParameter="TodoPage"  Text="Todo"></Button>
+            <Button Command="{Binding NavigateCommand}" CommandParameter="HomePage" Text="Home"/>
+            <Button Command="{Binding NavigateCommand}" CommandParameter="BMICalculator" Text="BMI calculator"/>
+            <Button Command="{Binding NavigateCommand}" CommandParameter="TimerPage" Text="Timer"/>
+            <Button Command="{Binding NavigateCommand}" CommandParameter="WorkoutPage" Text="Workout"/>
+            <Button Command="{Binding NavigateCommand}" CommandParameter="TodoPage"  Text="Todo"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
