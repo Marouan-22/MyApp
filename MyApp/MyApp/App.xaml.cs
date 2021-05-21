@@ -44,6 +44,7 @@ namespace MyApp
             containerRegistry.RegisterSingleton<ITodoRepository<Todo>, TodoRepository>();
             containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
             containerRegistry.RegisterForNavigation<WorkoutDetailPage, WorkoutDetailPageViewModel>();
+            containerRegistry.RegisterSingleton<IWorkoutRepository<Workout>, workoutRepository>();
         }
     }
 }

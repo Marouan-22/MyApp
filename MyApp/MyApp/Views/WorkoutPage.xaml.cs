@@ -13,10 +13,6 @@ namespace MyApp.Views
             //BindingContext = new WorkoutPageViewModel();
         }
 
-        private async void OnItemSelected(Object sender, ItemTappedEventArgs e)
-        {
-            var details = e.Item as Workout;
-            await Navigation.PushAsync(new WorkoutDetailPage(details.Name, details.Image, details.ImageDetail, details.Instructions));
-        }
+
     }
 }

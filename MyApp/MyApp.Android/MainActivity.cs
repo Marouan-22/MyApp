@@ -1,6 +1,7 @@
 ﻿using Android.App;
 using Android.Content.PM;
 using Android.OS;
+using MyApp.Models;
 using Prism;
 using Prism.Ioc;
 
@@ -34,6 +35,7 @@ namespace MyApp.Droid
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
             // Register any platform specific implementations
+            containerRegistry.Register<IFileHelper, FileHelper>();
         }
     }
 }

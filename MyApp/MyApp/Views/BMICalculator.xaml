@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="http://prismlibrary.com"
              prism:ViewModelLocator.AutowireViewModel="True"
+             NavigationPage.HasNavigationBar="false"
              IconImageSource="Bmi_icon_2x.png"
              x:Class="MyApp.Views.BMICalculator"
              Title="{Binding Title}">

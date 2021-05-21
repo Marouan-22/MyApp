@@ -5,13 +5,17 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="MyApp.Views.WorkoutPage"
              IconImageSource="workout_icon_2x.png"
+             xmlns:local="clr-namespace:MyApp.ViewModels"
+             xmlns:model="clr-namespace:MyApp.Models"
              Title="{Binding Title}">
 
         <ContentPage.Content>
-        <ListView ItemsSource="{Binding WorkoutList}"
+        <RefreshView Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
+            <ListView ItemsSource="{Binding WorkoutList}"
                    HasUnevenRows="true"
                    SeparatorVisibility="None"
-                   ItemTapped="OnItemSelected">
+                   SelectedItem="{Binding SelectedItem}">
+            
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -27,9 +31,9 @@
 
                             <Image
                                        HeightRequest="60"
-                                        HorizontalOptions="CenterAndExpand"
-                                        VerticalOptions="CenterAndExpand"
-                                        Aspect="AspectFill"
+                                       HorizontalOptions="CenterAndExpand"
+                                       VerticalOptions="CenterAndExpand"
+                                       Aspect="AspectFill"
                                        WidthRequest="66"
                                        Grid.RowSpan="2"
                                        Source="{Binding Image}"/>
@@ -46,6 +50,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        </RefreshView>
     </ContentPage.Content>
 
 </ContentPage>

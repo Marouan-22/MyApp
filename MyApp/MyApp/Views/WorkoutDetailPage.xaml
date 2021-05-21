@@ -3,12 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="http://prismlibrary.com"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="MyApp.Views.WorkoutDetailPage">
+             xmlns:local="clr-namespace:MyApp.ViewModels"
+             xmlns:model="clr-namespace:MyApp.Models"
+             x:Class="MyApp.Views.WorkoutDetailPage"
+             Title="{Binding Title}">
 
     <StackLayout HorizontalOptions="Center">
-        <Image x:Name="MyImageCall" HeightRequest="300" WidthRequest="300"/>
-        <Label x:Name="MyItemNameShow" HorizontalTextAlignment="Center"/>
-        <Label x:Name="MyInstructionsItemShow" Margin="20,20" FontSize="Small"/>
+        <Image Source="{Binding ImageDetail}" HeightRequest="300" WidthRequest="300"/>
+        <Label Text="{Binding Detail}" HorizontalTextAlignment="Center"/>
+        <Label Text="{Binding Instructions}" Margin="20,20" FontSize="Small"/>
     </StackLayout>
+
 
 </ContentPage>
