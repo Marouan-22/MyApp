@@ -9,7 +9,7 @@
              Title="{Binding Title}">
 
     <StackLayout HorizontalOptions="Center">
-        <Image Source="{Binding ImageDetail}" HeightRequest="300" WidthRequest="300"/>
+        <!--<Image Source="{Binding ImageDetail}" HeightRequest="300" WidthRequest="300"/>-->
         <Label Text="{Binding Detail}" HorizontalTextAlignment="Center"/>
         <Label Text="{Binding Instructions}" Margin="20,20" FontSize="Small"/>
     </StackLayout>

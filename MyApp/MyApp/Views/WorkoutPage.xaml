@@ -10,46 +10,25 @@
              Title="{Binding Title}">
 
         <ContentPage.Content>
-        <RefreshView Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
-            <ListView ItemsSource="{Binding WorkoutList}"
-                   HasUnevenRows="true"
-                   SeparatorVisibility="None"
-                   SelectedItem="{Binding SelectedItem}">
-            
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <Grid Padding="10" RowSpacing="10" ColumnSpacing="10">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="*"/>
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-
-                            <Image
-                                       HeightRequest="60"
-                                       HorizontalOptions="CenterAndExpand"
-                                       VerticalOptions="CenterAndExpand"
-                                       Aspect="AspectFill"
-                                       WidthRequest="66"
-                                       Grid.RowSpan="2"
-                                       Source="{Binding Image}"/>
-                            <Label Grid.Column="1"
-                                       Text="{Binding Name}"
-                                       VerticalOptions="End"/>
-                            <Label Grid.Column="1"
-                                       Grid.Row="1"
-                                       VerticalOptions="Start"
-                                       Text="{Binding Detail}"/>
-                        </Grid>
-                    </ViewCell>
-                    <!-- <ViewCell Text="" TextColor="Black"/>-->
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        <RefreshView x:DataType="local:WorkoutPageViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
+            <CollectionView ItemsSource="{Binding WorkoutList}"
+                SelectionMode="Single"
+                SelectedItem="{Binding SelectedItem}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="10" x:DataType="model:Workout">
+                            <Label Text="{Binding Name}" 
+                            LineBreakMode="NoWrap" 
+                            Style="{DynamicResource ListItemTextStyle}" 
+                            FontSize="16" />
+                            <Label Text="{Binding Detail}" 
+                            LineBreakMode="NoWrap"
+                            Style="{DynamicResource ListItemDetailTextStyle}"
+                            FontSize="13" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
         </RefreshView>
     </ContentPage.Content>
 

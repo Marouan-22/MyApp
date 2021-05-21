@@ -8,9 +8,8 @@ namespace MyApp.Repository
 {
     public interface IWorkoutRepository<T>
     {
-        Task<IEnumerable<T>> GetWorkoutsAync(bool forceRefresh = false);
-
         Task<T> GetNameAndDetailsAsync(string id);
+        Task<IEnumerable<T>> GetWorkoutsAync(bool forceRefresh = false);
         
         //Task<IEnumerable<T>> GetItemsAsync(bool forceRefresh = false);
     }

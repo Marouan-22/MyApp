@@ -13,7 +13,7 @@ namespace MyApp.ViewModels
     {
         private string detail;
         private string instructions;
-        private string imageDetail;
+        //private string imageDetail;
         private Workout workout;
         private IWorkoutRepository<Workout> workoutRepository;
         public WorkoutDetailPageViewModel(INavigationService navigationService, IWorkoutRepository<Workout> workoutRepository)
@@ -34,18 +34,18 @@ namespace MyApp.ViewModels
             get { return instructions; }
             set { SetProperty(ref instructions, value); }
         }
-        public string ImageDetail
-        {
-            get { return imageDetail; }
-            set { SetProperty(ref imageDetail, value); }
-        }
+        //public string ImageDetail
+        //{
+        //    get { return imageDetail; }
+        //    set { SetProperty(ref imageDetail, value); }
+        //}
 
         public override void OnNavigatedTo(INavigationParameters parameters)
         {
             if (parameters.ContainsKey("workout"))
             {
                 workout = parameters.GetValue<Workout>("workout");
-                ImageDetail = workout.ImageDetail;
+                //ImageDetail = workout.ImageDetail;
                 Detail = workout.Detail;
                 Instructions = workout.Instructions;
             }

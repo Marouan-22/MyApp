@@ -10,12 +10,12 @@ using System.Threading.Tasks;
 
 namespace MyApp.Repository
 {
-    public class workoutRepository : IWorkoutRepository<Workout>
+    public class WorkoutRepository : IWorkoutRepository<Workout>
     {
         private const string BaseUrl = "https://workout-8655b-default-rtdb.firebaseio.com/";
         private readonly ChildQuery _query;
 
-        public workoutRepository()
+        public WorkoutRepository()
         {
             string path = "workout";
             _query = new FirebaseClient(BaseUrl).Child(path);
@@ -24,11 +24,11 @@ namespace MyApp.Repository
         {
             try
             {
-                var item = await _query
+                var workout = await _query
                     .Child(id)
                     .OnceSingleAsync<Workout>();
-                item.Id = id;
-                return item;
+                workout.Id = id;
+                return workout;
             }
             catch (Exception ex)
             {
@@ -42,9 +42,9 @@ namespace MyApp.Repository
             {
                 var firebaseObjects = await _query.OnceAsync<Workout>();
 
-                IEnumerable<Workout> test =  firebaseObjects
+                /*IEnumerable<Workout> test =*/ return firebaseObjects
                     .Select(x => new Workout { Id = x.Key, Name = x.Object.Name, Detail = x.Object.Detail});
-                return test;
+                //return test;
             }
             catch (Exception ex)
             {

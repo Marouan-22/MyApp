@@ -20,19 +20,37 @@ namespace MyApp.ViewModels
         private bool isBusy;
 
         private IWorkoutRepository<Workout> workoutRepository;
-        public DelegateCommand LoadItemsCommand { get; }
-        public ObservableCollection<Workout> WorkoutList { get; set; }
 
         public WorkoutPageViewModel(INavigationService navigationService, IFileHelper helper, IWorkoutRepository<Workout> workoutRepository)
             : base(navigationService)
         {
             Title = "Workout";
-            WorkoutList = new ObservableCollection<Workout>();
 
             this.workoutRepository = workoutRepository;
 
+            WorkoutList = new ObservableCollection<Workout>();
+
             LoadItemsCommand = new DelegateCommand(async () => await ExecuteLoadItemsCommand());
         }
+
+        public Workout SelectedItem
+        {
+            get { return selectedItem; }
+            set
+            {
+                SetProperty(ref selectedItem, value);
+                OnItemSelected(value);
+            }
+        }
+
+        public bool IsBusy
+        {
+            get { return isBusy; }
+            set { SetProperty(ref isBusy, value); }
+        }
+
+        public ObservableCollection<Workout> WorkoutList { get; set; }
+        public DelegateCommand LoadItemsCommand { get; }
 
         public void OnAppearing()
         {
@@ -42,12 +60,6 @@ namespace MyApp.ViewModels
         public void OnDisappearing()
         {
 
-        }
-
-        public bool IsBusy
-        {
-            get { return isBusy; }
-            set { SetProperty(ref isBusy, value); }
         }
 
         private async Task ExecuteLoadItemsCommand()
@@ -70,16 +82,6 @@ namespace MyApp.ViewModels
             finally
             {
                 IsBusy = false;
-            }
-        }
-
-        public Workout SelectedItem
-        {
-            get { return selectedItem; }
-            set
-            {
-                SetProperty(ref selectedItem, value);
-                OnItemSelected(value);
             }
         }
 
