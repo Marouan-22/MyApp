@@ -5,6 +5,7 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="MyApp.Views.WorkoutPage"
              IconImageSource="workout_icon_2x.png"
+             NavigationPage.HasNavigationBar="false"
              xmlns:local="clr-namespace:MyApp.ViewModels"
              xmlns:model="clr-namespace:MyApp.Models"
              Title="{Binding Title}">

@@ -13,6 +13,9 @@ namespace MyApp.ViewModels
     {
         private string detail;
         private string instructions;
+        private string sets;
+        private string reps;
+        private string rest;
         //private string imageDetail;
         private Workout workout;
         private IWorkoutRepository<Workout> workoutRepository;
@@ -40,6 +43,24 @@ namespace MyApp.ViewModels
         //    set { SetProperty(ref imageDetail, value); }
         //}
 
+        public string Sets
+        {
+            get { return sets; }
+            set { SetProperty(ref sets, value); }
+        }
+
+        public string Reps
+        {
+            get { return reps; }
+            set { SetProperty(ref reps, value); }
+        }
+
+        public string Rest
+        {
+            get { return rest; }
+            set { SetProperty(ref rest, value); }
+        }
+
         public override void OnNavigatedTo(INavigationParameters parameters)
         {
             if (parameters.ContainsKey("workout"))
@@ -48,6 +69,9 @@ namespace MyApp.ViewModels
                 //ImageDetail = workout.ImageDetail;
                 Detail = workout.Detail;
                 Instructions = workout.Instructions;
+                Sets = workout.Sets;
+                Reps = workout.Reps;
+                Rest = workout.Rest;
             }
         }
     }

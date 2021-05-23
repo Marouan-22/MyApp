@@ -10,8 +10,11 @@
 
     <StackLayout HorizontalOptions="Center">
         <!--<Image Source="{Binding ImageDetail}" HeightRequest="300" WidthRequest="300"/>-->
-        <Label Text="{Binding Detail}" HorizontalTextAlignment="Center"/>
+        <Label Text="{Binding Detail}" HorizontalTextAlignment="Center" FontSize="24" FontAttributes="Bold"/>
         <Label Text="{Binding Instructions}" Margin="20,20" FontSize="Small"/>
+        <Label Text="{Binding Sets, StringFormat ='Sets: {0:N}'}" Margin="20,20" FontSize="Small"/>
+        <Label Text="{Binding Reps, StringFormat ='Reps: {0:N}'}" Margin="20,20" FontSize="Small"/>
+        <Label Text="{Binding Rest, StringFormat ='Rest: {0:N}'}" Margin="20,20" FontSize="Small"/>
     </StackLayout>
 
 

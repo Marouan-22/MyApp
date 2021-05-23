@@ -18,7 +18,7 @@ namespace MyApp.Repository
         public WorkoutRepository()
         {
             string path = "workout";
-            _query = new FirebaseClient(BaseUrl).Child(path);
+            _query = new FirebaseClient(BaseUrl).Child(path);/*.Child("Id")*/
         }
         public async Task<Workout> GetNameAndDetailsAsync(string id)
         {
@@ -40,11 +40,23 @@ namespace MyApp.Repository
         {
             try
             {
-                var firebaseObjects = await _query.OnceAsync<Workout>();
+                //var firebaseObjects = await _query.OnceAsync<Workout>();
 
-                /*IEnumerable<Workout> test =*/ return firebaseObjects
-                    .Select(x => new Workout { Id = x.Key, Name = x.Object.Name, Detail = x.Object.Detail});
-                //return test;
+                ///*IEnumerable<Workout> test =*/ return firebaseObjects
+                //    .Select(x => new Workout { Id = x.Key, Name = x.Object.Name, Detail = x.Object.Detail});
+                ////return test;
+
+                var firebaseObjects = await _query.OnceAsync<Workout>();
+                return firebaseObjects.Select(x => new Workout
+                {
+                    Id = x.Key,
+                    Name = x.Object.Name,
+                    Detail = x.Object.Detail,
+                    Instructions = x.Object.Instructions,
+                    Sets = x.Object.Sets,
+                    Reps = x.Object.Reps,
+                    Rest = x.Object.Rest
+                });
             }
             catch (Exception ex)
             {
