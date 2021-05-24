@@ -5,7 +5,6 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="MyApp.Views.TodoPage"
              NavigationPage.HasNavigationBar="false"
-             IconImageSource="todo_icon_2x.png"
              Title="{Binding Title}"
              xmlns:local="clr-namespace:MyApp.ViewModels"
              xmlns:model="clr-namespace:MyApp.Models">

@@ -5,17 +5,34 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              NavigationPage.HasNavigationBar="false"
              x:Class="MyApp.Views.TimerPage"
-             IconImageSource="timer_icon_2x.png"
              Title="{Binding Title}">
 
-    <StackLayout>
-        <Label x:Name="lblStopwatch" FontSize="45" TextColor="#00A8E8"
-               HorizontalOptions="CenterAndExpand"
-               VerticalOptions="CenterAndExpand"/>
 
-        <Button x:Name="btnStart" Text="Start" Clicked="btnStart_Clicked"/>
-        <Button x:Name="btnStop" Text="Stop" Clicked="btnStop_Clicked"/>
-        <Button x:Name="btnReset" Text="Reset" Clicked="btnReset_Clicked"/>
-    </StackLayout>
+        <StackLayout>
+        <Label HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="45" TextColor="#00A8E8">
+            <Label.FormattedText WidthRequest="318" HeightRequest="50" Margin="25">
+                <FormattedString>
+                    <Span Text="{Binding StopWatchHours}"/>
+                    <Span Text="hrs" FontSize="Micro" />
+                    <Span Text=":"/>
+                    <Span Text="{Binding StopWatchMinutes}"/>
+                    <Span Text="min" FontSize="Micro" />
+                    <Span Text=":"/>
+                    <Span Text="{Binding StopWatchSeconds}"/>
+                    <Span Text="sec" FontSize="Micro" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+            <Button Text="Start" WidthRequest="400" Command="{Binding Start}"/>
+            <Button Text="Stop" WidthRequest="400"  Command="{Binding Stop}"/>
+            <Button Text="Reset" WidthRequest="400" Command="{Binding Reset}"/>
+        </StackLayout>
+
+
+
+
+
+
+
 
 </ContentPage>

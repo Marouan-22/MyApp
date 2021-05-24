@@ -16,7 +16,7 @@ namespace MyApp.ViewModels
 
         private ITodoRepository<Todo> todoRepository;
         public NewTodoPageViewModel(INavigationService navigationService, ITodoRepository<Todo> todoRepository)
-            :base(navigationService)
+            : base(navigationService)
         {
             Title = "New Todo";
 

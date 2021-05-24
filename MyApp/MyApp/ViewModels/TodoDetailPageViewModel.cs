@@ -22,7 +22,7 @@ namespace MyApp.ViewModels
         private ITodoRepository<Todo> todoRepository;
 
         public TodoDetailPageViewModel(INavigationService navigationService, ITodoRepository<Todo> todoRepository, IPageDialogService pageDialogService)
-            :base(navigationService)
+            : base(navigationService)
         {
             Title = "Details";
 

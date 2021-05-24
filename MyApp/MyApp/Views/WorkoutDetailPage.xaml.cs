@@ -9,10 +9,6 @@ namespace MyApp.Views
         public WorkoutDetailPage()
         {
             InitializeComponent();
-            //MyItemNameShow.Text = Name;
-            //MyImageCall.Source = ImageSource.FromFile(source);
-            //MyImageCall.Source = ImageSource.FromFile(exersice);
-            //MyInstructionsItemShow.Text = Instructions;
 
         }
 

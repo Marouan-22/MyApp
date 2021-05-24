@@ -7,7 +7,8 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
-                <Grid HorizontalOptions="CenterAndExpand">
+                <Image Source="logo_MaSa.png" Margin="10"/>
+                <Grid HorizontalOptions="CenterAndExpand" Margin="25">
                     <Grid.RowDefinitions>
                         <RowDefinition/>
                         <RowDefinition/>
@@ -15,10 +16,10 @@
                         <RowDefinition/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <Entry Placeholder="UserName" x:Name="EntryUser" Grid.Row="0"/>
-                    <Entry Placeholder="Password" IsPassword="True" FontSize="16" x:Name="EntryPassword" Grid.Row="1"/>
-                    <Button Text="Register" HorizontalOptions="CenterAndExpand" TextColor="White" BackgroundColor="LightBlue" Grid.Row="2" Clicked="Button_Clicked_1"/>
-                    <Button Text="SignUp" Grid.Row="3" Clicked="Button_Clicked"/>
+                    <Entry Placeholder="UserName" x:Name="EntryUser" Text="{Binding Username}" Grid.Row="0"/>
+                    <Entry Placeholder="Password" Text="{Binding Password}" IsPassword="True" FontSize="16" x:Name="EntryPassword" Grid.Row="1"/>
+                    <Button Text="Log In" Command="{Binding LoginCommand}" HorizontalOptions="CenterAndExpand" TextColor="White" BackgroundColor="LightBlue" Grid.Row="2"/>
+                    <Button Text="SignUp" Command="{Binding RegisterCommand}" Grid.Row="3"/>
                 </Grid>
             </StackLayout>
         </ScrollView>

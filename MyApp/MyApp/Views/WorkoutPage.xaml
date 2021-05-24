@@ -4,7 +4,6 @@
              xmlns:prism="http://prismlibrary.com"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="MyApp.Views.WorkoutPage"
-             IconImageSource="workout_icon_2x.png"
              NavigationPage.HasNavigationBar="false"
              xmlns:local="clr-namespace:MyApp.ViewModels"
              xmlns:model="clr-namespace:MyApp.Models"
@@ -21,11 +20,11 @@
                             <Label Text="{Binding Name}" 
                             LineBreakMode="NoWrap" 
                             Style="{DynamicResource ListItemTextStyle}" 
-                            FontSize="16" />
+                            FontSize="24" />
                             <Label Text="{Binding Detail}" 
                             LineBreakMode="NoWrap"
                             Style="{DynamicResource ListItemDetailTextStyle}"
-                            FontSize="13" />
+                            FontSize="18" />
                         </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>

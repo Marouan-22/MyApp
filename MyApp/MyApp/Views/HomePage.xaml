@@ -4,7 +4,6 @@
              xmlns:prism="http://prismlibrary.com"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="MyApp.Views.HomePage"
-             IconImageSource="home_icon_2x.png"
              Title="{Binding Title}">
 
 
@@ -22,7 +21,7 @@
                         WidthRequest="318"
                         HeightRequest="50"
                         Margin="25"
-                        Clicked="Button_Clicked"/>
+                        Command="{Binding InfoCommand}"/>
 
             <Label Text="Veel Plezier!" HorizontalOptions="CenterAndExpand" FontSize="12" Margin="25"/>
         </StackLayout>

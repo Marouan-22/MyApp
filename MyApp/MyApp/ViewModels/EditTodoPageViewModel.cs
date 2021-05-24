@@ -19,7 +19,7 @@ namespace MyApp.ViewModels
         private ITodoRepository<Todo> todoRepository;
 
         public EditTodoPageViewModel(INavigationService navigationService, ITodoRepository<Todo> todoRepository)
-            :base(navigationService)
+            : base(navigationService)
         {
             Title = "Edit Todo";
 

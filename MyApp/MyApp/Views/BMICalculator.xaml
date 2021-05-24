@@ -4,7 +4,6 @@
              xmlns:prism="http://prismlibrary.com"
              prism:ViewModelLocator.AutowireViewModel="True"
              NavigationPage.HasNavigationBar="false"
-             IconImageSource="Bmi_icon_2x.png"
              x:Class="MyApp.Views.BMICalculator"
              Title="{Binding Title}">
     <ContentPage.Resources>
@@ -44,7 +43,7 @@
                 JustifyContent="SpaceEvenly"
                 Padding="10">
         <StackLayout>
-            <Label Text="How tall are you?"
+            <Label Text="How lang ben je?"
             Style="{StaticResource TitleStyle}"/>
             <Label Text="{Binding Source={x:Reference HeightSlider},
                 Path=Value,
@@ -56,7 +55,7 @@
                     Value="{Binding Height}"/>
         </StackLayout>
         <StackLayout>
-            <Label Text="How much do you weigh?"
+            <Label Text="Hoeveel weeg je?"
             Style="{StaticResource TitleStyle}"/>
             <Label Text="{Binding Source={x:Reference WeightSlider},
                 Path=Value,

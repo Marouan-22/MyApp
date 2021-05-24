@@ -7,7 +7,7 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="{Binding myProperty}" FontSize="18"/>
+            <Label Text="{Binding Info}" FontSize="18"/>
         </StackLayout>
     </ContentPage.Content>
     

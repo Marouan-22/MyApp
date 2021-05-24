@@ -10,7 +10,5 @@ namespace MyApp.Repository
     {
         Task<T> GetNameAndDetailsAsync(string id);
         Task<IEnumerable<T>> GetWorkoutsAync(bool forceRefresh = false);
-        
-        //Task<IEnumerable<T>> GetItemsAsync(bool forceRefresh = false);
     }
 }
